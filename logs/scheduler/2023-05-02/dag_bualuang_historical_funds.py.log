@@ -1100,3 +1100,61 @@ Please take a look at these docs to improve your DAG import time:
 * https://airflow.apache.org/docs/apache-airflow/2.5.3/best-practices.html#reducing-dag-complexity, PID: 58633
 [2023-05-02T14:55:45.153+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_bualuang_historical_funds.py
 [2023-05-02T14:55:45.205+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/dag_bualuang_historical_funds.py took 30.116 seconds
+[2023-05-02T14:56:15.636+0000] {processor.py:153} INFO - Started process (PID=58652) to work on /opt/airflow/dags/dag_bualuang_historical_funds.py
+[2023-05-02T14:56:15.640+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/dag_bualuang_historical_funds.py for tasks to queue
+[2023-05-02T14:56:15.642+0000] {logging_mixin.py:137} INFO - [2023-05-02T14:56:15.642+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/dag_bualuang_historical_funds.py
+[2023-05-02T14:56:16.069+0000] {logging_mixin.py:137} INFO - [2023-05-02T14:56:16.068+0000] {selenium_operator.py:36} INFO - Initializing Selenium WebDriver
+[2023-05-02T14:56:45.677+0000] {logging_mixin.py:137} INFO - [2023-05-02T14:56:45.665+0000] {timeout.py:68} ERROR - Process timed out, PID: 58652
+[2023-05-02T14:56:45.708+0000] {logging_mixin.py:137} INFO - [2023-05-02T14:56:45.684+0000] {dagbag.py:341} ERROR - Failed to import: /opt/airflow/dags/dag_bualuang_historical_funds.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 337, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_bualuang_historical_funds.py", line 61, in <module>
+    default_args=default_args)
+  File "/opt/airflow/dags/dag_bualuang_historical_funds.py", line 20, in __init__
+    self.create_task()
+  File "/opt/airflow/dags/dag_bualuang_historical_funds.py", line 30, in create_task
+    task1_result = task1.execute(None)
+  File "/opt/airflow/plugins/selenium_plugin/operators/selenium_operator.py", line 38, in execute
+    command_executor=self.remote_url, desired_capabilities=self.browser_capabilities
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 286, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 378, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/webdriver.py", line 438, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 290, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/airflow/.local/lib/python3.7/site-packages/selenium/webdriver/remote/remote_connection.py", line 311, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/request.py", line 79, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.7/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/dag_bualuang_historical_funds.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.5.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.5.3/best-practices.html#reducing-dag-complexity, PID: 58652
+[2023-05-02T14:56:45.712+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_bualuang_historical_funds.py
+[2023-05-02T14:56:45.786+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/dag_bualuang_historical_funds.py took 30.174 seconds
