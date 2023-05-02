@@ -926,3 +926,7 @@ Please take a look at these docs to improve your DAG import time:
 * https://airflow.apache.org/docs/apache-airflow/2.5.3/best-practices.html#reducing-dag-complexity, PID: 58572
 [2023-05-02T14:52:42.561+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_bualuang_historical_funds.py
 [2023-05-02T14:52:42.848+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/dag_bualuang_historical_funds.py took 31.549 seconds
+[2023-05-02T14:53:13.759+0000] {processor.py:153} INFO - Started process (PID=58592) to work on /opt/airflow/dags/dag_bualuang_historical_funds.py
+[2023-05-02T14:53:13.762+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/dag_bualuang_historical_funds.py for tasks to queue
+[2023-05-02T14:53:13.764+0000] {logging_mixin.py:137} INFO - [2023-05-02T14:53:13.763+0000] {dagbag.py:532} INFO - Filling up the DagBag from /opt/airflow/dags/dag_bualuang_historical_funds.py
+[2023-05-02T14:53:14.217+0000] {logging_mixin.py:137} INFO - [2023-05-02T14:53:14.216+0000] {selenium_operator.py:36} INFO - Initializing Selenium WebDriver
