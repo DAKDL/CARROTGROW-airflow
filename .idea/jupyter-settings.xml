@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JupyterPersistentConnectionParameters">
+    <option name="knownRemoteServers">
+      <list>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="24c3f842772b581e21f9380bd4233a5b3c625345f235d0c1" />
+          <option name="urlString" value="http://localhost:8889/" />
+          <authParams2>
+            <map>
+              <entry key="token" value="24c3f842772b581e21f9380bd4233a5b3c625345f235d0c1" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+      </list>
+    </option>
+    <option name="moduleParameters">
+      <map>
+        <entry key="$PROJECT_DIR$/../PractiveNN/UNet/.idea/UNet.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="authType" value="notebook" />
+              <option name="token" value="24c3f842772b581e21f9380bd4233a5b3c625345f235d0c1" />
+              <option name="urlString" value="http://localhost:8889/" />
+              <authParams2>
+                <map>
+                  <entry key="token" value="24c3f842772b581e21f9380bd4233a5b3c625345f235d0c1" />
+                </map>
+              </authParams2>
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
