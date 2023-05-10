@@ -106,7 +106,9 @@ class BualuangTableCrawler(BualuangCrawlerBase):
         df = pd.DataFrame(table_rows, columns=schemas)
 
         # To float
-        df.replace('N/A', None, inplace=True)
+        import numpy as np
+
+        df = df.applymap(lambda x: None if str(x).strip().upper() == 'N/A' else x)
         numerical = ['NAV', 'NavperUnit', 'sellingPrice', 'redemptionPrice', 'change']
         for i in numerical:
             df[i] = df[i].str.replace(',', "")
